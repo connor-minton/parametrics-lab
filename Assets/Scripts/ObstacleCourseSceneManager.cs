@@ -4,12 +4,14 @@ using UnityEngine;
 
 public class ObstacleCourseSceneManager : MonoBehaviour
 {
+    public CanvasGroup pauseMenu;
+
     private bool isPaused = false;
 
     // Start is called before the first frame update
     void Start()
     {
-
+        DisablePauseMenu();
     }
 
     // Update is called once per frame
@@ -24,6 +26,7 @@ public class ObstacleCourseSceneManager : MonoBehaviour
         if (!isPaused) {
             isPaused = true;
             Time.timeScale = 0;
+            EnablePauseMenu();
         }
     }
 
@@ -31,6 +34,7 @@ public class ObstacleCourseSceneManager : MonoBehaviour
         if (isPaused) {
             isPaused = false;
             Time.timeScale = 1;
+            DisablePauseMenu();
         }
     }
 
@@ -38,5 +42,17 @@ public class ObstacleCourseSceneManager : MonoBehaviour
         if (isPaused)
             Unpause();
         else Pause();
+    }
+
+    private void DisablePauseMenu() {
+        pauseMenu.alpha = 0;
+        pauseMenu.blocksRaycasts = false;
+        pauseMenu.interactable = false;
+    }
+
+    private void EnablePauseMenu() {
+        pauseMenu.alpha = 1;
+        pauseMenu.blocksRaycasts = true;
+        pauseMenu.interactable = true;
     }
 }
