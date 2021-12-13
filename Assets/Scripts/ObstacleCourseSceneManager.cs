@@ -22,7 +22,7 @@ public class ObstacleCourseSceneManager : MonoBehaviour
         }
     }
 
-    private void Pause() {
+    public void Pause() {
         if (!isPaused) {
             isPaused = true;
             Time.timeScale = 0;
@@ -30,7 +30,7 @@ public class ObstacleCourseSceneManager : MonoBehaviour
         }
     }
 
-    private void Unpause() {
+    public void Unpause() {
         if (isPaused) {
             isPaused = false;
             Time.timeScale = 1;
@@ -38,7 +38,14 @@ public class ObstacleCourseSceneManager : MonoBehaviour
         }
     }
 
-    private void TogglePause() {
+    public void Quit() {
+        #if UNITY_EDITOR
+        UnityEditor.EditorApplication.isPlaying = false;
+        #endif
+        Application.Quit();
+    }
+
+    public void TogglePause() {
         if (isPaused)
             Unpause();
         else Pause();
