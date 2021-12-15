@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c122fa359a19f944addcd62c62d38df, type: 3}
+  m_Name: Block1Team3Data
+  m_EditorClassIdentifier: 
+  teamName: Team 3
+  teamMembers:
+  - Savannah O.
+  - Brennan P.
+  - Quinlan R.
+  - Eli U.
+  isFirstPeriod: 1
+  color: {r: 0, g: 0.37254903, b: 1, a: 0}
+  material: {fileID: 0}
+  xEquation: {fileID: 2800000, guid: 47904b5a3fcf7974d9fe3d5db8ca70a9, type: 3}
+  yEquation: {fileID: 2800000, guid: ef71ddab69b6a2949b58040bac88c5f0, type: 3}
+  zEquation: {fileID: 2800000, guid: f994fc476dd180240832022353806623, type: 3}

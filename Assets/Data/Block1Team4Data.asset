@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c122fa359a19f944addcd62c62d38df, type: 3}
+  m_Name: Block1Team4Data
+  m_EditorClassIdentifier: 
+  teamName: Team 4
+  teamMembers:
+  - Rune O.
+  - Li S.
+  - Edward T.
+  isFirstPeriod: 1
+  color: {r: 1, g: 0.98039216, b: 0, a: 0}
+  material: {fileID: 0}
+  xEquation: {fileID: 2800000, guid: d1dc2b06853a61543b6cc4ca85d10e85, type: 3}
+  yEquation: {fileID: 2800000, guid: ed06b4278dc7abd43867709b0196d940, type: 3}
+  zEquation: {fileID: 2800000, guid: 0f602edca7f5c5d4db50f75a9280354a, type: 3}

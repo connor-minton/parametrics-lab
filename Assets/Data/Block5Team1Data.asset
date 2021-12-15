@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c122fa359a19f944addcd62c62d38df, type: 3}
+  m_Name: Block5Team1Data
+  m_EditorClassIdentifier: 
+  teamName: Team 1
+  teamMembers:
+  - Shelby C.
+  - Luca F.
+  - Neel P.
+  isFirstPeriod: 0
+  color: {r: 1, g: 0, b: 0, a: 0}
+  material: {fileID: 0}
+  xEquation: {fileID: 2800000, guid: 42fc8e523e354d94280ec68beb0f856e, type: 3}
+  yEquation: {fileID: 2800000, guid: ec1d047c3f3122f4ba1085a1d615f69b, type: 3}
+  zEquation: {fileID: 0}

@@ -6,6 +6,7 @@ public class ObstacleCourseSceneManager : MonoBehaviour
 {
     public CanvasGroup pauseMenu;
     public CanvasGroup mainMenu;
+    public CanvasGroup creditsMenu;
 
     public Obstacle1Controller o1first;
     public Obstacle1Controller o1fifth;
@@ -50,6 +51,7 @@ public class ObstacleCourseSceneManager : MonoBehaviour
         IsGameOver = true;
         DisablePauseMenu();
         DisableGameOverMenu();
+        DisableCreditsMenu();
         EnableMainMenu();
     }
 
@@ -144,9 +146,14 @@ public class ObstacleCourseSceneManager : MonoBehaviour
         ResetCharacter();
     }
 
+    public void EnterCredits() {
+        EnableCreditsMenu();
+    }
+
     public void ReturnToMainMenu() {
         Unpause();
         DisableGameOverMenu();
+        DisableCreditsMenu();
         EnableMainMenu();
     }
 
@@ -226,6 +233,18 @@ public class ObstacleCourseSceneManager : MonoBehaviour
         mainMenu.interactable = true;
         Cursor.visible = true;
         Time.timeScale = 0;
+    }
+
+    private void DisableCreditsMenu() {
+        creditsMenu.alpha = 0;
+        creditsMenu.blocksRaycasts = false;
+        creditsMenu.interactable = false;
+    }
+
+    private void EnableCreditsMenu() {
+        creditsMenu.alpha = 1;
+        creditsMenu.blocksRaycasts = true;
+        creditsMenu.interactable = true;
     }
 
     private void ResetCharacter() {
