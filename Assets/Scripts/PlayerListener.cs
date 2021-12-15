@@ -8,11 +8,12 @@ public class PlayerListener : MonoBehaviour
     public GameObject winText;
     public GameObject loseText;
     public GameObject explosion;
+    public ObstacleCourseSceneManager sceneManager;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
@@ -20,12 +21,14 @@ public class PlayerListener : MonoBehaviour
     {
         if (transform.position.y < -3)
         {
-            loseText.SetActive(true);
+            sceneManager.Lose();
+            // loseText.SetActive(true);
             player.SetActive(false);
         }
         if (transform.position.x > 39.71)
         {
-            winText.SetActive(true);
+            sceneManager.Win();
+            // winText.SetActive(true);
             player.SetActive(false);
         }
     }
@@ -34,7 +37,8 @@ public class PlayerListener : MonoBehaviour
     {
         if (collision.gameObject.tag == "obstacle")
         {
-            loseText.SetActive(true);
+            sceneManager.Lose();
+            // loseText.SetActive(true);
             player.SetActive(false);
             explosion.transform.position = transform.position;
             explosion.SetActive(true);

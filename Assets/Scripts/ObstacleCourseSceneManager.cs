@@ -26,12 +26,17 @@ public class ObstacleCourseSceneManager : MonoBehaviour
     public GameObject character;
     public GameObject characterCamera;
 
+    public CanvasGroup gameOverMenu;
+    public GameObject winText;
+    public GameObject loseText;
+
     private bool isPaused = false;
 
     // Start is called before the first frame update
     void Start()
     {
         DisablePauseMenu();
+        DisableGameOverMenu();
         EnableMainMenu();
     }
 
@@ -122,7 +127,20 @@ public class ObstacleCourseSceneManager : MonoBehaviour
 
     public void ReturnToMainMenu() {
         Unpause();
+        DisableGameOverMenu();
         EnableMainMenu();
+    }
+
+    public void Win() {
+        winText.SetActive(true);
+        loseText.SetActive(false);
+        EnableGameOverMenu();
+    }
+
+    public void Lose() {
+        winText.SetActive(false);
+        loseText.SetActive(true);
+        EnableGameOverMenu();
     }
 
     private void DisablePauseMenu() {
@@ -136,6 +154,20 @@ public class ObstacleCourseSceneManager : MonoBehaviour
         pauseMenu.alpha = 1;
         pauseMenu.blocksRaycasts = true;
         pauseMenu.interactable = true;
+        Cursor.visible = true;
+    }
+
+    private void DisableGameOverMenu() {
+        gameOverMenu.alpha = 0;
+        gameOverMenu.blocksRaycasts = false;
+        gameOverMenu.interactable = false;
+        Cursor.visible = false;
+    }
+
+    private void EnableGameOverMenu() {
+        gameOverMenu.alpha = 1;
+        gameOverMenu.blocksRaycasts = true;
+        gameOverMenu.interactable = true;
         Cursor.visible = true;
     }
 
@@ -156,6 +188,7 @@ public class ObstacleCourseSceneManager : MonoBehaviour
     }
 
     private void ResetCharacter() {
+        character.SetActive(true);
         character.transform.position = new Vector3(-5, 0, 0);
         character.transform.forward = new Vector3(1, 0, 0);
         characterCamera.transform.position = new Vector3(-5, 0, 0);
