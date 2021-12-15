@@ -55,11 +55,13 @@ public class ObstacleCourseSceneManager : MonoBehaviour
         pauseMenu.alpha = 0;
         pauseMenu.blocksRaycasts = false;
         pauseMenu.interactable = false;
+        Cursor.visible = false;
     }
 
     private void EnablePauseMenu() {
         pauseMenu.alpha = 1;
         pauseMenu.blocksRaycasts = true;
         pauseMenu.interactable = true;
+        Cursor.visible = true;
     }
 }
