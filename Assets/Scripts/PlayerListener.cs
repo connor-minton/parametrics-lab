@@ -8,6 +8,7 @@ public class PlayerListener : MonoBehaviour
     public GameObject winText;
     public GameObject loseText;
     public GameObject explosion;
+    public GameObject explosionParent;
     public ObstacleCourseSceneManager sceneManager;
 
     // Start is called before the first frame update
@@ -40,8 +41,8 @@ public class PlayerListener : MonoBehaviour
             sceneManager.Lose();
             // loseText.SetActive(true);
             player.SetActive(false);
-            explosion.transform.position = transform.position;
-            explosion.SetActive(true);
+            explosionParent.transform.position = transform.position;
+            Instantiate(explosion, explosionParent.transform);
         }
     }
 }

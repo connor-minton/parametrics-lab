@@ -30,11 +30,24 @@ public class ObstacleCourseSceneManager : MonoBehaviour
     public GameObject winText;
     public GameObject loseText;
 
+    public GameObject explosionParent;
+
     private bool isPaused = false;
+
+    public bool IsGameOver { get; private set; }
+
+    private enum GameMode {
+        FirstBlock,
+        FifthBlock,
+        Mayhem
+    }
+
+    private GameMode gameMode;
 
     // Start is called before the first frame update
     void Start()
     {
+        IsGameOver = true;
         DisablePauseMenu();
         DisableGameOverMenu();
         EnableMainMenu();
@@ -43,7 +56,7 @@ public class ObstacleCourseSceneManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape)) {
+        if (!IsGameOver && Input.GetKeyDown(KeyCode.Escape)) {
             TogglePause();
         }
     }
@@ -78,6 +91,8 @@ public class ObstacleCourseSceneManager : MonoBehaviour
     }
 
     public void StartFirstPeriod() {
+        gameMode = GameMode.FirstBlock;
+
         firstObstacles.SetActive(true);
         fifthObstacles.SetActive(false);
         o1first.Reset();
@@ -92,6 +107,8 @@ public class ObstacleCourseSceneManager : MonoBehaviour
     }
 
     public void StartFifthPeriod() {
+        gameMode = GameMode.FifthBlock;
+
         fifthObstacles.SetActive(true);
         firstObstacles.SetActive(false);
         o1fifth.Reset();
@@ -106,6 +123,8 @@ public class ObstacleCourseSceneManager : MonoBehaviour
     }
 
     public void StartMayhem() {
+        gameMode = GameMode.Mayhem;
+
         fifthObstacles.SetActive(true);
         firstObstacles.SetActive(true);
         o1first.Reset();
@@ -131,13 +150,35 @@ public class ObstacleCourseSceneManager : MonoBehaviour
         EnableMainMenu();
     }
 
+    public void Restart() {
+        Unpause();
+        DisableGameOverMenu();
+
+        switch (gameMode) {
+        case GameMode.FirstBlock:
+            StartFirstPeriod();
+            break;
+        case GameMode.FifthBlock:
+            StartFifthPeriod();
+            break;
+        case GameMode.Mayhem:
+            StartMayhem();
+            break;
+        default:
+            StartFirstPeriod();
+            break;
+        }
+    }
+
     public void Win() {
+        IsGameOver = true;
         winText.SetActive(true);
         loseText.SetActive(false);
         EnableGameOverMenu();
     }
 
     public void Lose() {
+        IsGameOver = true;
         winText.SetActive(false);
         loseText.SetActive(true);
         EnableGameOverMenu();
@@ -188,10 +229,15 @@ public class ObstacleCourseSceneManager : MonoBehaviour
     }
 
     private void ResetCharacter() {
+        IsGameOver = false;
         character.SetActive(true);
         character.transform.position = new Vector3(-5, 0, 0);
         character.transform.forward = new Vector3(1, 0, 0);
         characterCamera.transform.position = new Vector3(-5, 0, 0);
         characterCamera.transform.forward = new Vector3(1, 0, 0);
+        foreach (Transform t in explosionParent.transform) {
+            // should only be one explosion if one exists
+            Destroy(t.gameObject);
+        }
     }
 }
