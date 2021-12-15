@@ -38,4 +38,8 @@ public class Obstacle5Controller : MonoBehaviour
     {
         return 0.5f;
     }
+
+    public void Reset() {
+        currentTime = 0;
+    }
 }

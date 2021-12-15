@@ -40,4 +40,8 @@ public class Obstacle4Controller : MonoBehaviour
             return Mathf.Abs(2*Mathf.Cos(3.5f*t))+0.5f;
         return 0.5f;
     }
+
+    public void Reset() {
+        currentTime = 0;
+    }
 }

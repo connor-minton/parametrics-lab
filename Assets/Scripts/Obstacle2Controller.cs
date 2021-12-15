@@ -38,5 +38,9 @@ public class Obstacle2Controller : MonoBehaviour
     {
         return 0.5f;
     }
+
+    public void Reset() {
+        currentTime = 0;
+    }
 }
 

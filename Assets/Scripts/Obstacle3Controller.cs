@@ -40,4 +40,8 @@ public class Obstacle3Controller : MonoBehaviour
             return 0;
         return 0.5f;
     }
+
+    public void Reset() {
+        currentTime = 0;
+    }
 }
