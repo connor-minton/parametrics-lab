@@ -192,6 +192,7 @@ public class ObstacleCourseSceneManager : MonoBehaviour
         winText.SetActive(true);
         loseText.SetActive(false);
         EnableGameOverMenu();
+        SaveRecord();
     }
 
     public void Lose(ObstacleData data) {
@@ -267,6 +268,12 @@ public class ObstacleCourseSceneManager : MonoBehaviour
     }
 
     private void ResetCharacter() {
+        string recordKey = GetRecordKey(gameMode);
+        if (PlayerPrefs.HasKey(recordKey))
+            stopwatch.SetBestTime(PlayerPrefs.GetFloat(recordKey));
+        else
+            stopwatch.SetBestTime(-1);
+
         currentTime = 0;
         IsGameOver = false;
         character.SetActive(true);
@@ -277,6 +284,27 @@ public class ObstacleCourseSceneManager : MonoBehaviour
         foreach (Transform t in explosionParent.transform) {
             // should only be one explosion if one exists
             Destroy(t.gameObject);
+        }
+    }
+
+    private string GetRecordKey(GameMode gm) {
+        switch (gm) {
+        case GameMode.FirstBlock:
+            return "FirstBlockRecord";
+        case GameMode.FifthBlock:
+            return "FifthBlockRecord";
+        case GameMode.Mayhem:
+            return "MayhemRecord";
+        default:
+            return "FirstBlockRecord";
+        }
+    }
+
+    private void SaveRecord() {
+        string key = GetRecordKey(gameMode);
+        if (!PlayerPrefs.HasKey(key) || PlayerPrefs.GetFloat(key) > currentTime) {
+            stopwatch.SetBestTime(currentTime);
+            PlayerPrefs.SetFloat(key, currentTime);
         }
     }
 }

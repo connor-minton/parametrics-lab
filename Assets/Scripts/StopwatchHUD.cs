@@ -10,10 +10,12 @@ public class StopwatchHUD : MonoBehaviour
     private int lastCentis = -1;
 
     public Text currentTimeText;
+    public Text bestTimeText;
 
     // Start is called before the first frame update
     void Start()
     {
+        SetBestTime(-1);
     }
 
     // Update is called once per frame
@@ -33,6 +35,19 @@ public class StopwatchHUD : MonoBehaviour
             return;
 
         currentTimeText.text = $"{minutes}:{seconds:00}.<size=26>{centis:00}</size>";
+    }
+
+    public void SetBestTime(float t) {
+        if (t < 0) {
+            bestTimeText.text = "Record:     --:--.<size=12>--</size>";
+            return;
+        }
+
+        int minutes = Mathf.FloorToInt(t / 60);
+        int seconds = Mathf.FloorToInt(t - minutes*60);
+        int centis = Mathf.FloorToInt((t - minutes*60 - seconds)*100);
+
+        bestTimeText.text = $"Record:     {minutes}:{seconds:00}.<size=12>{centis:00}</size>";
     }
 
     public void Reset() {
