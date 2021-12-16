@@ -17,7 +17,7 @@ MonoBehaviour:
   - Riya S.
   - Kate W.
   isFirstPeriod: 0
-  color: {r: 0.9098039, g: 0, b: 1, a: 0}
+  color: {r: 0.9098039, g: 0, b: 1, a: 1}
   material: {fileID: 0}
   xEquation: {fileID: 2800000, guid: 9e19c14572f0f6a4092d319404b88323, type: 3}
   yEquation: {fileID: 2800000, guid: c824ec834bb9b31449a699225602dff1, type: 3}

@@ -184,10 +184,18 @@ public class ObstacleCourseSceneManager : MonoBehaviour
         EnableGameOverMenu();
     }
 
-    public void Lose() {
+    public void Lose(ObstacleData data) {
         IsGameOver = true;
         winText.SetActive(false);
         loseText.SetActive(true);
+        var loseTextText = loseText.GetComponent<UnityEngine.UI.Text>();
+        if (data == null) {
+            loseTextText.text = "You can't go that way, silly!";
+        }
+        else {
+            string hexcode = ColorUtility.ToHtmlStringRGBA(data.color);
+            loseTextText.text = $"Destroyed by <color=#{hexcode}>{data.teamName}</color>!";
+        }
         EnableGameOverMenu();
     }
 

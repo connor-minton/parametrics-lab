@@ -18,7 +18,7 @@ MonoBehaviour:
   - Li S.
   - Edward T.
   isFirstPeriod: 1
-  color: {r: 1, g: 0.98039216, b: 0, a: 0}
+  color: {r: 1, g: 0.98039216, b: 0, a: 1}
   material: {fileID: 0}
   xEquation: {fileID: 2800000, guid: d1dc2b06853a61543b6cc4ca85d10e85, type: 3}
   yEquation: {fileID: 2800000, guid: ed06b4278dc7abd43867709b0196d940, type: 3}

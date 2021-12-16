@@ -19,7 +19,7 @@ MonoBehaviour:
   - Blake S.
   - Isaac T.
   isFirstPeriod: 1
-  color: {r: 0.9098039, g: 0, b: 1, a: 0}
+  color: {r: 0.9098039, g: 0, b: 1, a: 1}
   material: {fileID: 0}
   xEquation: {fileID: 2800000, guid: fa33d178814402640a2c9cc1972316d2, type: 3}
   yEquation: {fileID: 2800000, guid: a1cb570b925a45e4cb50142899554bb2, type: 3}

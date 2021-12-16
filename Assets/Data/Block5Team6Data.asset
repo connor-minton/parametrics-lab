@@ -18,7 +18,7 @@ MonoBehaviour:
   - Ethan P.
   - Luke S.
   isFirstPeriod: 0
-  color: {r: 1, g: 0.5529412, b: 0, a: 0}
+  color: {r: 1, g: 0.5529412, b: 0, a: 1}
   material: {fileID: 0}
   xEquation: {fileID: 2800000, guid: 7c069413d4482a543ab3139a15bd0352, type: 3}
   yEquation: {fileID: 2800000, guid: 594ab0fa94bb0de40aa436725f7efd5d, type: 3}

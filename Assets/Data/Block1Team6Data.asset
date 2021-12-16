@@ -17,7 +17,7 @@ MonoBehaviour:
   - Daigan S.
   - Zach Z.
   isFirstPeriod: 1
-  color: {r: 1, g: 0.5529412, b: 0, a: 0}
+  color: {r: 1, g: 0.5529412, b: 0, a: 1}
   material: {fileID: 0}
   xEquation: {fileID: 2800000, guid: 27638ecadfc3356438792012733923de, type: 3}
   yEquation: {fileID: 2800000, guid: 376c7beaedd26704a98963719bfa3880, type: 3}

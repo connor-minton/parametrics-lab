@@ -19,7 +19,7 @@ MonoBehaviour:
   - Quinlan R.
   - Eli U.
   isFirstPeriod: 1
-  color: {r: 0, g: 0.37254903, b: 1, a: 0}
+  color: {r: 0, g: 0.37254903, b: 1, a: 1}
   material: {fileID: 0}
   xEquation: {fileID: 2800000, guid: 47904b5a3fcf7974d9fe3d5db8ca70a9, type: 3}
   yEquation: {fileID: 2800000, guid: ef71ddab69b6a2949b58040bac88c5f0, type: 3}

@@ -18,7 +18,7 @@ MonoBehaviour:
   - Icelyn K.
   - Aayush P.
   isFirstPeriod: 1
-  color: {r: 1, g: 0, b: 0, a: 0}
+  color: {r: 1, g: 0, b: 0, a: 1}
   material: {fileID: 0}
   xEquation: {fileID: 2800000, guid: 2a7e8b8c7397f8a43a5e0a23812b9df7, type: 3}
   yEquation: {fileID: 2800000, guid: 3f8feda9421fa62419169625de3eb91c, type: 3}

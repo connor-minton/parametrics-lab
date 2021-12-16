@@ -22,7 +22,7 @@ public class PlayerListener : MonoBehaviour
     {
         if (transform.position.y < -3)
         {
-            sceneManager.Lose();
+            sceneManager.Lose(null);
             // loseText.SetActive(true);
             player.SetActive(false);
         }
@@ -38,7 +38,8 @@ public class PlayerListener : MonoBehaviour
     {
         if (collision.gameObject.tag == "obstacle")
         {
-            sceneManager.Lose();
+            var obstacleData = collision.gameObject.GetComponent<ObstacleController>().data;
+            sceneManager.Lose(obstacleData);
             // loseText.SetActive(true);
             player.SetActive(false);
             explosionParent.transform.position = transform.position;

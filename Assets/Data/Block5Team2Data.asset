@@ -18,7 +18,7 @@ MonoBehaviour:
   - Michael C.
   - Alyssa E.
   isFirstPeriod: 0
-  color: {r: 0, g: 0.7921569, b: 0.15686275, a: 0}
+  color: {r: 0, g: 0.7921569, b: 0.15686275, a: 1}
   material: {fileID: 0}
   xEquation: {fileID: 2800000, guid: cdcdd3dc1404b964caf9c2c4ee2b90b7, type: 3}
   yEquation: {fileID: 2800000, guid: 7cde1350cbe57eb47beca21c184a8f9f, type: 3}

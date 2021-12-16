@@ -18,7 +18,7 @@ MonoBehaviour:
   - Luca F.
   - Neel P.
   isFirstPeriod: 0
-  color: {r: 1, g: 0, b: 0, a: 0}
+  color: {r: 1, g: 0, b: 0, a: 1}
   material: {fileID: 0}
   xEquation: {fileID: 2800000, guid: 42fc8e523e354d94280ec68beb0f856e, type: 3}
   yEquation: {fileID: 2800000, guid: ec1d047c3f3122f4ba1085a1d615f69b, type: 3}
