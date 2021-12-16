@@ -194,7 +194,8 @@ public class ObstacleCourseSceneManager : MonoBehaviour
         }
         else {
             string hexcode = ColorUtility.ToHtmlStringRGBA(data.color);
-            loseTextText.text = $"Destroyed by <color=#{hexcode}>{data.teamName}</color>!";
+            string blockName = data.isFirstPeriod ? " (1st Block)" : " (5th Block)";
+            loseTextText.text = $"Destroyed by\n<color=#{hexcode}>{data.teamName}{(gameMode == GameMode.Mayhem ? blockName : "")}</color>!";
         }
         EnableGameOverMenu();
     }
