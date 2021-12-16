@@ -33,6 +33,8 @@ public class ObstacleCourseSceneManager : MonoBehaviour
 
     public GameObject explosionParent;
 
+    public StopwatchHUD stopwatch;
+
     private bool isPaused = false;
 
     public bool IsGameOver { get; private set; }
@@ -45,10 +47,13 @@ public class ObstacleCourseSceneManager : MonoBehaviour
 
     private GameMode gameMode;
 
+    private float currentTime = 0;
+
     // Start is called before the first frame update
     void Start()
     {
         IsGameOver = true;
+        stopwatch.Reset();
         DisablePauseMenu();
         DisableGameOverMenu();
         DisableCreditsMenu();
@@ -60,6 +65,10 @@ public class ObstacleCourseSceneManager : MonoBehaviour
     {
         if (!IsGameOver && Input.GetKeyDown(KeyCode.Escape)) {
             TogglePause();
+        }
+        if (!IsGameOver && !isPaused) {
+            currentTime += Time.deltaTime;
+            stopwatch.SetCurrentTime(currentTime);
         }
     }
 
@@ -160,6 +169,7 @@ public class ObstacleCourseSceneManager : MonoBehaviour
     public void Restart() {
         Unpause();
         DisableGameOverMenu();
+        stopwatch.Reset();
 
         switch (gameMode) {
         case GameMode.FirstBlock:
@@ -257,6 +267,7 @@ public class ObstacleCourseSceneManager : MonoBehaviour
     }
 
     private void ResetCharacter() {
+        currentTime = 0;
         IsGameOver = false;
         character.SetActive(true);
         character.transform.position = new Vector3(-5, 0, 0);
