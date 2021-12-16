@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+using UnityStandardAssets.Cameras;
+
 public class ObstacleCourseSceneManager : MonoBehaviour
 {
     public CanvasGroup pauseMenu;
@@ -189,6 +191,7 @@ public class ObstacleCourseSceneManager : MonoBehaviour
 
     public void Win() {
         IsGameOver = true;
+        characterCamera.GetComponent<FreeLookCam>().enabled = false;
         winText.SetActive(true);
         loseText.SetActive(false);
         EnableGameOverMenu();
@@ -197,6 +200,7 @@ public class ObstacleCourseSceneManager : MonoBehaviour
 
     public void Lose(ObstacleData data) {
         IsGameOver = true;
+        characterCamera.GetComponent<FreeLookCam>().enabled = false;
         winText.SetActive(false);
         loseText.SetActive(true);
         var loseTextText = loseText.GetComponent<UnityEngine.UI.Text>();
@@ -273,6 +277,8 @@ public class ObstacleCourseSceneManager : MonoBehaviour
             stopwatch.SetBestTime(PlayerPrefs.GetFloat(recordKey));
         else
             stopwatch.SetBestTime(-1);
+
+        characterCamera.GetComponent<FreeLookCam>().enabled = true;
 
         currentTime = 0;
         IsGameOver = false;
