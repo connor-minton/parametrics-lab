@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c122fa359a19f944addcd62c62d38df, type: 3}
   m_Name: Block1Team4Data
   m_EditorClassIdentifier: 
-  teamName: Team 4
+  teamName: The Basilisk
   teamMembers:
   - Rune O.
   - Li S.

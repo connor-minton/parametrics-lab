@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c122fa359a19f944addcd62c62d38df, type: 3}
   m_Name: Block5Team3Data
   m_EditorClassIdentifier: 
-  teamName: Team 3
+  teamName: The Ghoul
   teamMembers:
   - Nick H.
   - Ethan H.

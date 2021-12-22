@@ -9,6 +9,7 @@ public class ObstacleCourseSceneManager : MonoBehaviour
     public CanvasGroup pauseMenu;
     public CanvasGroup mainMenu;
     public CanvasGroup creditsMenu;
+    public CanvasGroup settingsMenu;
 
     public Obstacle1Controller o1first;
     public Obstacle1Controller o1fifth;
@@ -37,6 +38,8 @@ public class ObstacleCourseSceneManager : MonoBehaviour
 
     public StopwatchHUD stopwatch;
 
+    public Settings settings;
+
     private bool isPaused = false;
 
     public bool IsGameOver { get; private set; }
@@ -59,6 +62,7 @@ public class ObstacleCourseSceneManager : MonoBehaviour
         DisablePauseMenu();
         DisableGameOverMenu();
         DisableCreditsMenu();
+        DisableSettingsMenu();
         EnableMainMenu();
     }
 
@@ -115,6 +119,13 @@ public class ObstacleCourseSceneManager : MonoBehaviour
         o5first.Reset();
         o6first.Reset();
 
+        o1first.TimeScale = settings.TimeScale;
+        o2first.TimeScale = settings.TimeScale;
+        o3first.TimeScale = settings.TimeScale;
+        o4first.TimeScale = settings.TimeScale;
+        o5first.TimeScale = settings.TimeScale;
+        o6first.TimeScale = settings.TimeScale;
+
         DisableMainMenu();
         ResetCharacter();
     }
@@ -130,6 +141,13 @@ public class ObstacleCourseSceneManager : MonoBehaviour
         o4fifth.Reset();
         o5fifth.Reset();
         o6fifth.Reset();
+
+        o1fifth.TimeScale = settings.TimeScale;
+        o2fifth.TimeScale = settings.TimeScale;
+        o3fifth.TimeScale = settings.TimeScale;
+        o4fifth.TimeScale = settings.TimeScale;
+        o5fifth.TimeScale = settings.TimeScale;
+        o6fifth.TimeScale = settings.TimeScale;
 
         DisableMainMenu();
         ResetCharacter();
@@ -153,6 +171,20 @@ public class ObstacleCourseSceneManager : MonoBehaviour
         o5fifth.Reset();
         o6fifth.Reset();
 
+        o1first.TimeScale = settings.TimeScale;
+        o2first.TimeScale = settings.TimeScale;
+        o3first.TimeScale = settings.TimeScale;
+        o4first.TimeScale = settings.TimeScale;
+        o5first.TimeScale = settings.TimeScale;
+        o6first.TimeScale = settings.TimeScale;
+
+        o1fifth.TimeScale = settings.TimeScale;
+        o2fifth.TimeScale = settings.TimeScale;
+        o3fifth.TimeScale = settings.TimeScale;
+        o4fifth.TimeScale = settings.TimeScale;
+        o5fifth.TimeScale = settings.TimeScale;
+        o6fifth.TimeScale = settings.TimeScale;
+
         DisableMainMenu();
         ResetCharacter();
     }
@@ -161,10 +193,19 @@ public class ObstacleCourseSceneManager : MonoBehaviour
         EnableCreditsMenu();
     }
 
+    public void EnterSettings() {
+        EnableSettingsMenu();
+    }
+
     public void ReturnToMainMenu() {
         Unpause();
         DisableGameOverMenu();
         DisableCreditsMenu();
+        EnableMainMenu();
+    }
+
+    public void SaveSettings() {
+        DisableSettingsMenu();
         EnableMainMenu();
     }
 
@@ -269,6 +310,18 @@ public class ObstacleCourseSceneManager : MonoBehaviour
         creditsMenu.alpha = 1;
         creditsMenu.blocksRaycasts = true;
         creditsMenu.interactable = true;
+    }
+
+    private void DisableSettingsMenu() {
+        settingsMenu.alpha = 0;
+        settingsMenu.blocksRaycasts = false;
+        settingsMenu.interactable = false;
+    }
+
+    private void EnableSettingsMenu() {
+        settingsMenu.alpha = 1;
+        settingsMenu.blocksRaycasts = true;
+        settingsMenu.interactable = true;
     }
 
     private void ResetCharacter() {

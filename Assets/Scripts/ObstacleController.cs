@@ -7,6 +7,17 @@ public class ObstacleController : MonoBehaviour
     private float currentTime;
     public bool isFirstPeriod;
     public ObstacleData data;
+    private float _timeScale = 1;
+    public float TimeScale {
+        get {
+            return _timeScale;
+        }
+        set {
+            if (value <= 0)
+                _timeScale = 1;
+            else _timeScale = value;
+        }
+    }
 
     // Start is called before the first frame update
     public virtual void Start()
@@ -17,7 +28,8 @@ public class ObstacleController : MonoBehaviour
     // Update is called once per frame
     public virtual void Update()
     {
-        transform.position = new Vector3(x(currentTime), z(currentTime), y(currentTime));
+        float t = TimeScale * currentTime;
+        transform.position = new Vector3(x(t), z(t), y(t));
         currentTime += Time.deltaTime;
     }
 
