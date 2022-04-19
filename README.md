@@ -1,7 +1,5 @@
 # Precalculus Lab - Designing a Video Game Using Parametric Equations
 
----
-
 In this lab, students get hands-on, real-world experience with parametric equations
 by designing a video game. In this repository is a simple base game that features a
 player-controlled character whose goal is to move to the finish line while dodging
