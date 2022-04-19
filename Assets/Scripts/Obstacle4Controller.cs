@@ -22,6 +22,6 @@ public class Obstacle4Controller : ObstacleController
     {
         if (isFirstPeriod)
             return Mathf.Abs(2*Mathf.Cos(3.5f*t))+0.5f;
-        return 0.5f;
+        return base.z(t);
     }
 }
