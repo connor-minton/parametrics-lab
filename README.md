@@ -15,23 +15,26 @@ group is responsible for the parameterization of one obstacle.
 Making use of this project requires basic knowledge in C# programming and the Unity
 game engine. Here's how the lesson goes at a high level:
 
-0. Students should have a very basic understanding of parametric equations as a way
-   of representing motion over time. In the first part of the lesson (~5 minutes),
-   I gave students some useful parametric equations for periodic motion. Maybe
-   have a class discussion about why using periodic motion for the obstacles would
-   be a good idea (e.g., the obstacles move but stay on the field, the player can
-   become better at the game by learning the motion of the obstacle, etc.).
+0. From prior lessons, students should have a very basic understanding of
+   parametric equations as a way of representing motion over time. In the first
+   part of the lesson (~5 minutes), I gave students some useful parametric
+   equations for periodic motion. Maybe have a class discussion about why using
+   periodic motion for the obstacles would be a good idea (e.g., the obstacles
+   move but stay on the field, the player can become better at the game by
+   learning the motion of the obstacle, etc.).
 1. Students then break out into at most six groups of two to four students. Each group
    decides on an obstacle color (red, green, blue, yellow, orange, or purple).
 2. **Desmos:** Students begin designing their group's obstacle's pair of parametric equations
    using a [Desmos utility](https://www.desmos.com/calculator/sfgrffqxp2)
-   custom-designed for this lesson (for more on this, see the Desmos section). Students
+   custom-designed for this lesson (for more on this, see the Desmos section). The color
+   in the Desmos utility matches the color of the obstacle in Unity for all obstacles
+   except the yellow obstacle in Unity, which is represented in Desmos as black. Students
    should be thinking about what to name their obstacle. This name will show on the credits
-   screen of the game. Groups that finish early can be sent to help other groups or
-   be sent back to make guided improvements on their own obstacle. Try to keep
-   to a schedule to make sure there is time for discussion and playing the game.
-   Demonstrate how the Desmos tool maps to the Unity game field and play a sample game
-   for motivation.
+   screen and the game-over screen. Groups that finish early can be sent to help
+   other groups or be sent back to make guided improvements on their own
+   obstacle. Try to keep to a schedule to make sure there is time for discussion
+   and playing the game.  Demonstrate how the Desmos tool maps to the Unity game
+   field and play a sample game for motivation.
 3. **Demonstration:** When all the groups are finished, with Unity and a code
    editor open, enter each group's parametric equations into the game code (for
    more on this, see the Demonstration section).  Demonstrate each group's obstacle
@@ -126,6 +129,18 @@ implementations in `ObstacleController`. The default implementation for `z()`
 always returns 0.5, which makes the obstacle "rest" on the ground.  For
 obstacles whose groups do not provide a _z_-coordinate function (this will
 probably be most groups), the `z()` function override should be omitted.
+
+The game-over screen will display the name of the obstacle that destroyed the player.
+To change the name of the obstacle, as well as the names of students that will appear
+in the Credits menu, use Unity to edit the obstacle data in `Assets/Data`. The credits
+section shows an image of each group's parametric equations, but they are not
+automatically generated; these images must be supplied manually by the
+programmer. If you don't want to deal with these, remove the references to these
+images from the `X Equation`, `Y Equation`, and `Z Equation` fields, or students
+will be confused that there are different equations in the credits than the ones
+they gave.
+
+![Obstacle data](doc/obstacle-data.png)
 
 # Contact
 
