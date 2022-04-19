@@ -142,6 +142,8 @@ they gave.
 
 ![Obstacle data](doc/obstacle-data.png)
 
+![Credits](doc/credits.png)
+
 # Contact
 
 For more info or clarification, contact me at `connor.c.minton@gmail.com` or create
