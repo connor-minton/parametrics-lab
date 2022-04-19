@@ -53,11 +53,18 @@ game engine. Here's how the lesson goes at a high level:
 ![Desmos tool](doc/desmos.png)
 
 This project includes a [Desmos utility](https://www.desmos.com/calculator/sfgrffqxp2) that
-students should use to visualize how their obstacle will move on the game field. This
-link already has the equations that one of my classes came up with.  Before the
+students should use to visualize how their obstacle will move on the game field. You can
+animate the object by pressing the play button next to the slider for _t_ (the animation
+speed was chosen carefully so that _t_ increases by 1 per second, but should this not be
+the case on your end, you might want to change it so the speed of the objects in Unity matches
+the speed of the objects in Desmos). Play around
+with the utility so that you can show students how to use it. Before the
 lesson, you should probably make a copy of this utility on your own Desmos
 account so that you can modify the equations to some basic starter equations of your
-choosing. The coordinate system is such that (0, 0) in Desmos is positioned a
+choosing. When you hand the tool off to students, toggle the obstacles so that only each
+group's obstacle is shown. 
+
+The coordinate system is such that (0, 0) in Desmos is positioned a
 few meters in front of the player character. The graph in Desmos represents a
 bird's-eye view of the playing field, where _x_ = 0 is near the player, and
 (roughly) _x_ = 38 is the location of the finish line.  The width of the field
@@ -121,7 +128,7 @@ public class Obstacle4Controller : ObstacleController
 The `x()`, `y()`, and `z()` functions in the controller represent the _x_, _y_, and
 _z_ coordinates in _Desmos_, not Unity. Thus, the students' equations for _x_, _y_,
 and _z_ are to be entered in these functions without changing to Unity coordinates.
-The first period group in charge of Obstacle 4 decided to specify a function for _z_,
+In the example above, the first period group in charge of Obstacle 4 decided to specify a function for _z_,
 but the fifth period group did not.  All of these functions have default
 implementations in `ObstacleController`. The default implementation for `z()`
 always returns 0.5, which makes the obstacle "rest" on the ground.  For
